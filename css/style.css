@@ -1,188 +1,102 @@
+@import url("https://use.typekit.net/yhn1zse.css");
+
 :root {
-  --ink: #1e2530;
-  --muted: #68717d;
-  --paper: #f4f0e8;
-  --accent: #d95b3f;
-  --line: #c9c1b4;
-  --display: Georgia, "Times New Roman", serif;
-  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+    --text-small: 1rem;
+    --text-base: 6rem;
+    --text-secondary: 5rem;
+    --text-principle: 10vw;
+    --color-text: #6a004d;
+    --color-accent: #006d77;
+    --color-accent-hover: #730009;
+    --font-family-base: "urca",sans-serif;
+    --font-family-heading: "keo",sans-serif;
 }
 
 body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--sans);
-  line-height: 1.5;
+    background: #ffbe1d;
+    color: #181818;
+    font-family: var(--font-family-base);
+    font-size: var(--text-principle); 
 }
-
-.site-header,
-main,
-.site-footer {
-  width: min(1100px, calc(100% - 2rem));
-  margin: 0 auto;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
 }
-
-.site-header {
-  padding: 4rem 0 3rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.eyebrow,
-.theme-label,
-.theme-marker {
-  margin: 0;
-  color: var(--accent);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-h1,
-h2,
-h3,
-h4,
-p {
-  margin-top: 0;
-}
-
-h1,
-h2,
-h3 {
-  font-family: var(--display);
-  font-weight: 400;
-  line-height: 1;
-}
-
 h1 {
-  max-width: 1000px;
-  margin-bottom: 1.25rem;
-  font-size: clamp(3.5rem, 10vw, 8rem);
-  letter-spacing: -0.05em;
-}
-
-.intro {
-  max-width: 42rem;
-  margin-bottom: 2rem;
-  color: var(--muted);
-  font-size: 1.1rem;
-}
-
-.theme-nav,
-.song-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.theme-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.theme-nav a {
-  display: inline-block;
-  padding: 0.45rem 0.8rem;
-  border: 1px solid var(--line);
-  color: var(--ink);
-  font-size: 0.85rem;
-  text-decoration: none;
-}
-
-.theme-nav a:hover,
-.theme-nav a:focus-visible {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.index-overview {
-  padding: 4rem 0;
-}
-
-.section-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 2rem;
+    background-color: #ffbe1d;
+    font-size: var(--font-size-h1);
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 h2 {
-  margin-bottom: 0;
-  font-size: clamp(2rem, 5vw, 4rem);
-  text-align: right;
+    font-family: var(--font-family-base);
+    font-size: var(--font-font-size-h2);
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
-.emotion-summary {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+p {
+    font-size: var(--text-sec);
+    color: var(--color-accent);
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
-.emotion-summary li {
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.2);
+.hero {
+    text-align: center;
 }
 
-.emotion-summary a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.5rem 1.25rem;
-  color: var(--ink);
-  font-family: var(--display);
-  font-size: clamp(1.5rem, 2.8vw, 2.5rem);
-  text-decoration: none;
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 180px;
+    padding: 0;
+    text-align: justify all line;
+
 }
-
-.emotion-summary a span {
-  color: var(--accent);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  font-family: var(--sans);
-  text-transform: uppercase;
+/*
+para editar el p que está debajo del h1, se puede usar el selector de hermano adyacente (+) para seleccionar el p que sigue inmediatamente al h1. Esto permite aplicar estilos específicos a ese p sin afectar a otros elementos p en la página.
+*/
+.hero h1 + p {
+    font-size: 2rem;
+    color: var(--color-text);
+    margin: 0 auto;
+    padding: 0;
+    max-width: 600px;
 }
-
-.emotion-summary a:hover,
-.emotion-summary a:focus-visible {
-  background: #efe7dc;
-}
-
-.site-footer {
-  padding: 0 0 3rem;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-@media (max-width: 700px) {
-  .site-header {
-    padding-top: 2.5rem;
-  }
-
-  .section-heading {
-    display: block;
-  }
-
-  h2 {
-    margin-top: 0.75rem;
+/*
+Texto descriptivo
+*/
+.hero h1 + p + p {
+    font-size: 4rem;
+    font-family: var(--font-family-heading);
+    color: var(--color-text);
+    margin-top: 100px;
+    margin-left: 50px;
+    padding: 0;
+    max-width: 600px;
     text-align: left;
-  }
-
-  .theme-list {
-    grid-template-columns: 1fr;
-  }
+}
+.hero h1 + p + p + p{
+    font-size: 4rem;
+    font-family: var(--font-family-heading);
+    color: var(--color-text);
+    margin-left: 50px;
+    padding: 0;
+    max-width: 600px;
+    text-align: left;
+}
+.hero h1 + p + p + p + p{
+    font-size: 4rem;
+    font-family: var(--font-family-heading);
+    color: var(--color-text);
+    margin-left: 50px;
+    padding: 0;
+    max-width: 600px;
+    text-align: left;
 }

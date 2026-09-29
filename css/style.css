@@ -1,134 +1,188 @@
-/*
-  ============================================================
-  TOKENS
-  ============================================================
-
-  Variables reutilizables para mantener un sistema visual
-  consistente en todo el documento.
-*/
-
 :root {
-  --color-background: #f4f4f0;
-  --color-text: #171717;
-  --color-accent: #5b3df5;
-
-  --font-family-base: system-ui, Arial, Helvetica, sans-serif;
-
-  --font-size-body: 1rem;
-  --font-size-h1: 3rem;
-  --font-size-h2: 2rem;
-  --font-size-h3: 1.25rem;
+  --ink: #1e2530;
+  --muted: #68717d;
+  --paper: #f4f0e8;
+  --accent: #d95b3f;
+  --line: #c9c1b4;
+  --display: Georgia, "Times New Roman", serif;
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-/*
-  ============================================================
-  SELECTOR UNIVERSAL
-  ============================================================
-  * funciona como un comodín.
-  Selecciona todos los elementos HTML.
-*/
 
 * {
   box-sizing: border-box;
-  /*
-    Regla temporal para visualizar las cajas.
-    Puede eliminarse cuando ya no sea necesaria.
-  */
-  outline: 1px solid;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
-/*
-  ============================================================
-  BODY
-  ============================================================
-
-  Define el sistema visual base del documento.
-*/
 body {
   margin: 0;
-
-  background-color: var(--color-background);
-  color: var(--color-text);
-
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-body);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.5;
 }
 
-/*
-  ============================================================
-  JERARQUÍA TIPOGRÁFICA
-  ============================================================
-
-  HTML define la jerarquía.
-  CSS controla su representación visual.
-*/
-
-h1 {
-  font-size: var(--font-size-h1);
-}
-
-h2 {
-  font-size: var(--font-size-h2);
-}
-
-h3 {
-  font-size: var(--font-size-h3);
-}
-
-
-/*
-  ============================================================
-  LINKS
-  ============================================================
-
-  El color de acento identifica enlaces y acciones.
-*/
-
-a {
-  color: var(--color-accent);
-}
-
-
-/*
-  ============================================================
-  CONTENEDOR PRINCIPAL
-  ============================================================
-
-  width:
-  ocupa una proporción del espacio disponible.
-
-  max-width:
-  evita que el contenido crezca demasiado.
-
-  margin: 0 auto:
-  distribuye el espacio horizontal y centra la caja.
-*/
-
-main {
-  width: 65%;
-  min-width: 290px;
-  max-width: 1240px;
+.site-header,
+main,
+.site-footer {
+  width: min(1100px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
-
-/*
-  ============================================================
-  ESPACIADO BÁSICO
-  ============================================================
-*/
-
-header,
-main,
-footer {
-  padding: 2rem;
+.site-header {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--line);
 }
 
-section {
-  margin-bottom: 3rem;
+.eyebrow,
+.theme-label,
+.theme-marker {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-nav a {
-  margin-right: 1rem;
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 1;
+}
+
+h1 {
+  max-width: 1000px;
+  margin-bottom: 1.25rem;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  letter-spacing: -0.05em;
+}
+
+.intro {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.theme-nav,
+.song-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.theme-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.theme-nav a {
+  display: inline-block;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.theme-nav a:hover,
+.theme-nav a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.index-overview {
+  padding: 4rem 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-align: right;
+}
+
+.emotion-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.emotion-summary li {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.emotion-summary a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 1.25rem;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.8vw, 2.5rem);
+  text-decoration: none;
+}
+
+.emotion-summary a span {
+  color: var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  font-family: var(--sans);
+  text-transform: uppercase;
+}
+
+.emotion-summary a:hover,
+.emotion-summary a:focus-visible {
+  background: #efe7dc;
+}
+
+.site-footer {
+  padding: 0 0 3rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    padding-top: 2.5rem;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  h2 {
+    margin-top: 0.75rem;
+    text-align: left;
+  }
+
+  .theme-list {
+    grid-template-columns: 1fr;
+  }
 }

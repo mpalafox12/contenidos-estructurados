@@ -1,102 +1,353 @@
 @import url("https://use.typekit.net/yhn1zse.css");
 
 :root {
-    --text-small: 1rem;
-    --text-base: 6rem;
-    --text-secondary: 5rem;
-    --text-principle: 10vw;
-    --color-text: #6a004d;
-    --color-accent: #006d77;
-    --color-accent-hover: #730009;
-    --font-family-base: "urca",sans-serif;
-    --font-family-heading: "keo",sans-serif;
+  --text-small: 1rem;
+  --text-base: 1.2rem;
+  --text-secondary: 2rem;
+  --text-principle: 10vw;
+
+  --color-bg: #ffbe1d;
+  --color-panel: #fff7ea;
+  --color-card: #f7ebd7;
+  --color-text: #6a004d;
+  --color-text-dark: #6a004d;
+  --color-accent: #006d77;
+  --color-accent-2: #730009;
+  --color-muted: #6a004d;
+  --color-line: rgba(106, 0, 77, 0.15);
+
+  --font-family-base: "urca", sans-serif;
+  --font-family-heading: "keo", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    background: #ffbe1d;
-    color: #181818;
-    font-family: var(--font-family-base);
-    font-size: var(--text-principle); 
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text-dark);
+  font-family: var(--font-family-base);
+  line-height: 1.6;
 }
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-heading);
-    color: var(--color-text);
-    margin: 0;
-    padding: 0;
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-heading);
+  color: var(--color-text);
+}
+
 h1 {
-    background-color: #ffbe1d;
-    font-size: var(--font-size-h1);
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
 }
 
 h2 {
-    font-family: var(--font-family-base);
-    font-size: var(--font-font-size-h2);
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
-p {
-    font-size: var(--text-sec);
-    color: var(--color-accent);
-    margin: 0;
-    padding: 0;
-    text-align: center;
+h3 {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.2;
+}
+
+p,
+li,
+span,
+a {
+  font-family: var(--font-family-base);
+  color: var(--color-text-dark);
 }
 
 .hero {
-    text-align: center;
+  background: #6a004d;
+  color: #fff;
+  padding: 1.5rem 1.2rem 3rem;
+  box-shadow: 0 20px 35px rgba(27, 13, 17, 0.12);
 }
 
-.hero p {
-    font-size: 1.5rem;
-    margin-top: 180px;
-    padding: 0;
-    text-align: justify all line;
+.topbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  flex-wrap: wrap;
+}
 
+.brand {
+  font-family: var(--font-family-heading);
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
 }
-/*
-para editar el p que está debajo del h1, se puede usar el selector de hermano adyacente (+) para seleccionar el p que sigue inmediatamente al h1. Esto permite aplicar estilos específicos a ese p sin afectar a otros elementos p en la página.
-*/
-.hero h1 + p {
-    font-size: 2rem;
-    color: var(--color-text);
-    margin: 0 auto;
-    padding: 0;
-    max-width: 600px;
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  align-items: center;
 }
-/*
-Texto descriptivo
-*/
-.hero h1 + p + p {
-    font-size: 4rem;
-    font-family: var(--font-family-heading);
-    color: var(--color-text);
-    margin-top: 100px;
-    margin-left: 50px;
-    padding: 0;
-    max-width: 600px;
-    text-align: left;
+
+.nav a {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease;
 }
-.hero h1 + p + p + p{
-    font-size: 4rem;
-    font-family: var(--font-family-heading);
-    color: var(--color-text);
-    margin-left: 50px;
-    padding: 0;
-    max-width: 600px;
-    text-align: left;
+
+.nav a:hover {
+  color: #006d77;
 }
-.hero h1 + p + p + p + p{
-    font-size: 4rem;
-    font-family: var(--font-family-heading);
-    color: var(--color-text);
-    margin-left: 50px;
-    padding: 0;
-    max-width: 600px;
-    text-align: left;
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2.5rem;
+}
+
+.eyebrow,
+.label {
+  margin: 0 0 0.8rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.eyebrow {
+  color: #ffd77b;
+}
+
+.lead {
+  max-width: 760px;
+  margin-top: 1.2rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.6rem;
+}
+
+.hero-stats span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.2rem 4rem;
+}
+
+.section {
+  margin-bottom: 3.2rem;
+}
+
+.section-head {
+  margin-bottom: 1.2rem;
+}
+
+.label {
+  color: var(--color-accent-2);
+}
+
+.intro-card,
+.song-card,
+.topic,
+.polemic,
+.obs-card,
+.source-group {
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.intro-card,
+.obs-card {
+  padding: 1.8rem;
+}
+
+.intro-card p,
+.obs-card p,
+.song-card p,
+.topic p,
+.polemic p,
+.source-group li,
+.footer p {
+  color: var(--color-text-dark);
+}
+
+.song-card {
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.song-card h3 {
+  margin-bottom: 0.9rem;
+}
+
+.song-card strong {
+  color: var(--color-text);
+}
+
+.meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.meta li {
+  font-size: 0.96rem;
+  color: var(--color-text-dark);
+}
+
+.meta strong {
+  color: var(--color-text-dark);
+}
+
+.source {
+  color: var(--color-text-dark);
+  font-style: italic;
+  font-size: 0.92rem;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.topic,
+.polemic,
+.source-group {
+  padding: 1.5rem 1.25rem;
+}
+
+.topic h3,
+.polemic h3,
+.source-group h3 {
+  margin-bottom: 0.7rem;
+  color: var(--color-text);
+}
+
+.polemic-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.source-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+ul,
+ol {
+  margin: 0.7rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.inline-list li {
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  background: rgba(0, 109, 119, 0.08);
+  border: 1px solid rgba(0, 109, 119, 0.16);
+  font-size: 0.8rem;
+  color: var(--color-text);
+}
+
+.footer {
+  border-top: 1px solid var(--color-line);
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer p {
+  margin: 0 0 0.8rem;
+  color: var(--color-text-dark);
+}
+
+.keywords {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    gap: 0.75rem 1rem;
+  }
+
+  .hero {
+    padding-bottom: 2.5rem;
+  }
+
+  .intro-card,
+  .song-card,
+  .obs-card {
+    padding: 1.2rem;
+  }
+}
+
+.hero h1 {
+  color: #ffbe1d;
 }
